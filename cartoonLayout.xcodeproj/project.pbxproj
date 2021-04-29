@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		6AE8BC3F26396DA4006DB35F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE8BC3E26396DA4006DB35F /* AppDelegate.swift */; };
-		6AE8BC4126396DA4006DB35F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE8BC4026396DA4006DB35F /* SceneDelegate.swift */; };
 		6AE8BC4326396DA4006DB35F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE8BC4226396DA4006DB35F /* ViewController.swift */; };
 		6AE8BC4626396DA4006DB35F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6AE8BC4426396DA4006DB35F /* Main.storyboard */; };
 		6AE8BC4826396DB9006DB35F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6AE8BC4726396DB9006DB35F /* Assets.xcassets */; };
@@ -37,7 +36,6 @@
 /* Begin PBXFileReference section */
 		6AE8BC3B26396DA3006DB35F /* cartoonLayout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cartoonLayout.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6AE8BC3E26396DA4006DB35F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		6AE8BC4026396DA4006DB35F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		6AE8BC4226396DA4006DB35F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		6AE8BC4526396DA4006DB35F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6AE8BC4726396DB9006DB35F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -100,7 +98,6 @@
 			isa = PBXGroup;
 			children = (
 				6AE8BC3E26396DA4006DB35F /* AppDelegate.swift */,
-				6AE8BC4026396DA4006DB35F /* SceneDelegate.swift */,
 				6AE8BC4226396DA4006DB35F /* ViewController.swift */,
 				6AE8BC4426396DA4006DB35F /* Main.storyboard */,
 				6AE8BC4726396DB9006DB35F /* Assets.xcassets */,
@@ -260,7 +257,6 @@
 			files = (
 				6AE8BC4326396DA4006DB35F /* ViewController.swift in Sources */,
 				6AE8BC3F26396DA4006DB35F /* AppDelegate.swift in Sources */,
-				6AE8BC4126396DA4006DB35F /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -439,6 +435,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 637JS3JU7M;
 				INFOPLIST_FILE = cartoonLayout/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -458,6 +455,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 637JS3JU7M;
 				INFOPLIST_FILE = cartoonLayout/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
