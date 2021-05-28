@@ -43,5 +43,9 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+    <key>NSPhotoLibraryAddUsageDescription</key>
+    <string>This app needs permission to save this photo on your device.</string>
+    <key>NSPhotoLibraryUsageDescription</key>
+    <string>This app needs permission to access your pictures.</string>
 </dict>
 </plist>

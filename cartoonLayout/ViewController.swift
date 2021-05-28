@@ -51,6 +51,32 @@ class ViewController: UIViewController {
         let deviceType = UIDevice.current.model
         print(deviceType)
         
+        let burger = UIImage(named: "IMG_0967")
+        let imgviewA = UIImageView(frame: CGRect(x: 0, y: 0, width: burger!.size.width, height:burger!.size.height))
+        imgviewA.image = burger
+        imgviewA.contentMode = .scaleToFill
+        //https://stackoverflow.com/questions/11867152/how-to-create-an-image-from-uilabel
+        let caption = UIMarginLabel(frame: CGRect(x: 0, y: burger!.size.height, width: burger!.size.width, height: burger!.size.height * 0.1))
+        caption.numberOfLines = 0
+        caption.leftInset = 15
+        caption.rightInset = 15
+        caption.topInset = 5
+        caption.bottomInset = 5
+        caption.text = "humberger observation experiment, day1 fresh. Still edible."
+        caption.font = caption.font.withSize(120)
+        
+        UIGraphicsBeginImageContextWithOptions(caption.bounds.size, false, 0.0)
+        caption.layer.render(in: UIGraphicsGetCurrentContext()!)
+        let capImg = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        let imgviewB = UIImageView(frame: CGRect(x: 0, y: burger!.size.height, width: burger!.size.width, height:burger!.size.height * 0.1))
+        imgviewB.image = capImg
+        
+        let merged = getMixedImg(image1: burger!, image2: capImg!)
+        
+        UIImageWriteToSavedPhotosAlbum(merged, nil, nil, nil)
+        
         if deviceType.contains("iPad"){
         //TODO To prevent collasping the layout, we need to vary the value of the right and left margins in every sizes.
         let new = NSLayoutConstraint(item: leftIV, attribute: NSLayoutConstraint.Attribute.top, relatedBy: NSLayoutConstraint.Relation.equal, toItem: topIV, attribute: NSLayoutConstraint.Attribute.bottom, multiplier: 1, constant: -135)
@@ -72,9 +98,40 @@ class ViewController: UIViewController {
         self.view.removeConstraint(rightRight)
         self.view.addConstraint(new4)
         self.view.layoutIfNeeded()
+            
+            
+           
         }
     }
 
+    func getMixedImg(image1: UIImage, image2: UIImage) -> UIImage {
+
+        let size = CGSize(width: image1.size.width, height: image1.size.height + image2.size.height)
+
+        UIGraphicsBeginImageContext(size)
+
+        image1.draw(in: CGRect(x: 0,y: 0,width: size.width, height: image1.size.height))
+        image2.draw(in: CGRect(x: 0,y: image1.size.height,width: size.width, height: image2.size.height))
+        let finalImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+
+        return finalImage!
+    }
 
 }
 
+@IBDesignable class UIMarginLabel: UILabel {
+    
+    @IBInspectable var topInset:       CGFloat = 0
+    @IBInspectable var rightInset:     CGFloat = 0
+    @IBInspectable var bottomInset:    CGFloat = 0
+    @IBInspectable var leftInset:      CGFloat = 0
+    
+    
+    
+    override func drawText(in rect: CGRect) {
+        let insets: UIEdgeInsets = UIEdgeInsets(top: self.topInset, left: self.leftInset, bottom: self.bottomInset, right: self.rightInset)
+        self.setNeedsLayout()
+        return super.drawText(in: rect.inset(by: insets))
+    }
+}
